@@ -1,0 +1,264 @@
+@import "tailwindcss";
+@source "../";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Malabar Challengers FC — design system
+ * Brand: deep pitch green, gold ball amber, black / white minimalism.
+ */
+
+@theme inline {
+  --font-display: "Archivo", "Helvetica Neue", sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 14px);
+  --radius-3xl: calc(var(--radius) + 24px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-argentina: var(--argentina);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-surface: var(--surface);
+  --color-on-dark: oklch(0.985 0 0);
+
+  --animate-reveal: reveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-roll: roll 1.6s linear infinite;
+  --animate-sweep: sweep 9s ease-in-out infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-marquee: marquee 32s linear infinite;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(1 0 0);
+  --surface: oklch(0.975 0.003 250);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.145 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.968 0.004 250);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.968 0.004 250);
+  --muted-foreground: oklch(0.47 0.006 250);
+  --accent: oklch(0.63 0.19 148);
+  --accent-foreground: oklch(0.99 0 0);
+  --gold: oklch(0.79 0.16 82);
+  --argentina: oklch(0.72 0.11 232);
+  --border: oklch(0.915 0.004 250);
+  --input: oklch(0.915 0.004 250);
+  --ring: oklch(0.63 0.19 148);
+
+  --glass-bg: oklch(1 0 0 / 62%);
+  --glass-border: oklch(0.145 0 0 / 8%);
+  --shadow-soft: 0 1px 2px oklch(0.145 0 0 / 4%), 0 18px 50px -22px oklch(0.145 0 0 / 16%);
+  --shadow-lift: 0 30px 70px -30px oklch(0.145 0 0 / 26%);
+  --grid-line: oklch(0.145 0 0 / 6%);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --surface: oklch(0.185 0.004 250);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.19 0.004 250);
+  --card-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.235 0.004 250);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.235 0.004 250);
+  --muted-foreground: oklch(0.72 0.008 250);
+  --accent: oklch(0.72 0.2 148);
+  --accent-foreground: oklch(0.145 0 0);
+  --gold: oklch(0.83 0.16 84);
+  --argentina: oklch(0.78 0.1 232);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.72 0.2 148);
+
+  --glass-bg: oklch(1 0 0 / 5%);
+  --glass-border: oklch(1 0 0 / 12%);
+  --shadow-soft: 0 20px 60px -30px oklch(0 0 0 / 70%);
+  --shadow-lift: 0 40px 90px -40px oklch(0.72 0.2 148 / 22%);
+  --grid-line: oklch(1 0 0 / 6%);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes roll {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sweep {
+  0%,
+  100% {
+    transform: translateX(-12%) rotate(8deg);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateX(12%) rotate(-6deg);
+    opacity: 0.6;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* --- Utilities --------------------------------------------------------- */
+
+@utility glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(22px) saturate(140%);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility lift {
+  transition:
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.5s ease;
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lift);
+    border-color: color-mix(in oklab, var(--accent) 45%, transparent);
+  }
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@utility display-xl {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+  font-size: clamp(2rem, 4.6vw, 3.75rem);
+}
+
+@utility pitch-grid {
+  background-image:
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
+  background-size: 88px 88px;
+}
+
+@utility accent-underline {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 2px;
+    width: 100%;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
