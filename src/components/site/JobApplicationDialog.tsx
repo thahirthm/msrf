@@ -120,7 +120,7 @@ export function JobApplicationDialog({ trigger, jobTitle }: { trigger: React.Rea
 
       const values = parsed.data;
       // Note: Make sure the job_applications table exists in Supabase.
-      const insert = await supabase.from("job_applications").insert({
+      const insert = await (supabase.from as any)("job_applications").insert({
         job_title: jobTitle,
         full_name: values.fullName,
         mobile_number: values.mobileNumber,

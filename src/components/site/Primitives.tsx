@@ -57,14 +57,16 @@ const variants = {
 export function ActionLink({
   href,
   children,
-  variant = "accent",
+  variant = "solid",
+  className,
 }: {
   href: string;
   children: ReactNode;
-  variant?: keyof typeof variants;
+  variant?: "glass" | "accent" | "solid" | "ghost";
+  className?: string;
 }) {
   return (
-    <Link href={href} className={`${base} ${variants[variant]}`}>
+    <Link href={href} className={`${base} ${variants[variant]} ${className}`}>
       {children}
       <span className="transition-transform duration-500 group-hover:translate-x-1">→</span>
     </Link>

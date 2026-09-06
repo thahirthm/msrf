@@ -7,7 +7,103 @@ import { toast } from "sonner";
 import { supabase } from "@/integrations/supabase/client";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
-export default AdminPayments;
+const tabs = [
+  { key: "all", label: "All submissions" },
+  { key: "pending", label: "Pending" },
+  { key: "verified", label: "Verified" },
+  { key: "rejected", label: "Rejected" },
+];
+
+const inr = (amount: number) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(amount);
+const dateFmt = (dateString: string) => new Date(dateString).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+export default function AdminPayments() {
+  const router = useRouter();
+  const queryClient = useQueryClient();
+  const [tab, setTab] = useState("all");
+  const [viewUrl, setViewUrl] = useState<string | null>(null);
+  const [rejecting, setRejecting] = useState<any>(null);
+  const [reason, setReason] = useState("");
+  const [busyId, setBusyId] = useState<string | null>(null);
+
+  const { data: session, isLoading: sessionLoading } = useQuery({
+    queryKey: ["session"],
+    queryFn: async () => {
+      const { data } = await supabase.auth.getSession();
+      return data.session;
+    }
+  });
+
+  const submissions = useQuery({
+    queryKey: ["payments"],
+    queryFn: async () => {
+      const { data, error } = await supabase.from("payment_submissions").select("*").order("created_at", { ascending: false });
+      if (error) throw error;
+      return data || [];
+    },
+    enabled: !!session,
+  });
+
+  if (sessionLoading) return null;
+  if (!session) {
+    router.replace("/auth");
+    return null;
+  }
+
+  const rows = submissions.data ? (tab === "all" ? submissions.data : submissions.data.filter(r => r.status === tab)) : [];
+
+  const openScreenshot = async (path: string) => {
+    const { data } = supabase.storage.from("payments").getPublicUrl(path);
+    setViewUrl(data.publicUrl);
+  };
+
+  const verify = async (row: any) => {
+    setBusyId(row.id);
+    try {
+      const { error } = await supabase.from("payment_submissions").update({ status: "verified" }).eq("id", row.id);
+      if (error) throw error;
+      toast.success("Payment verified");
+      queryClient.invalidateQueries({ queryKey: ["payments"] });
+    } catch (e: any) {
+      toast.error(e.message);
+    } finally {
+      setBusyId(null);
+    }
+  };
+
+  const reject = async () => {
+    if (!rejecting) return;
+    if (!reason.trim()) {
+      toast.error("Please provide a reason");
+      return;
+    }
+    setBusyId(rejecting.id);
+    try {
+      const { error } = await supabase.from("payment_submissions").update({ status: "rejected", rejection_reason: reason }).eq("id", rejecting.id);
+      if (error) throw error;
+      toast.success("Payment rejected");
+      setRejecting(null);
+      queryClient.invalidateQueries({ queryKey: ["payments"] });
+    } catch (e: any) {
+      toast.error(e.message);
+    } finally {
+      setBusyId(null);
+    }
+  };
+
+  return (
+    <section className="min-h-screen bg-surface px-6 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <p className="eyebrow">Admin portal</p>
+            <h1 className="display-sm mt-4 text-3xl">Payment verifications</h1>
+          </div>
+          <button
+            onClick={async () => {
+              await supabase.auth.signOut();
+              queryClient.clear();
+              router.replace("/auth");
             }}
             className="rounded-full border border-border px-5 py-2.5 text-sm font-semibold hover:border-accent hover:text-accent"
           >
