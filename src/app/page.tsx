@@ -40,7 +40,7 @@ function Home() {
           style={{ background: "linear-gradient(to bottom, var(--accent), transparent 70%)" }}
         />
 
-        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 pb-16 pt-36 md:px-10 md:pb-24">
+        <div className="relative z-10 mx-auto w-full max-w-[1240px] px-6 pb-12 pt-28 md:px-10 md:pb-24 md:pt-36">
           <Reveal>
             <div className="flex items-center gap-3">
               <BallIcon className="h-4 w-4 animate-[roll_4s_linear_infinite] text-accent" />
@@ -59,7 +59,7 @@ function Home() {
             </p>
           </Reveal>
           <Reveal delay={320}>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
+            <div className="mt-8 flex flex-wrap items-center gap-3 md:mt-10">
               <ActionLink href="/programs">Join the academy</ActionLink>
               <ActionLink href="/gallery" variant="glass">
                 Watch the academy
@@ -78,7 +78,8 @@ function Home() {
       </section>
 
       {/* Marquee */}
-      <div className="overflow-hidden border-y border-border bg-surface py-5">
+      <Reveal>
+        <div className="overflow-hidden border-y border-border bg-surface py-5">
         <div className="flex w-max animate-[marquee_34s_linear_infinite] gap-12 pr-12">
           {[0, 1].map((pass) => (
             <div key={pass} className="flex shrink-0 items-center gap-12">
@@ -96,18 +97,19 @@ function Home() {
             </div>
           ))}
         </div>
-      </div>
+        </div>
+      </Reveal>
 
       {/* About preview */}
       <Section className="pitch-grid">
-        <div className="grid items-start gap-16 lg:grid-cols-2">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           <Reveal>
             <SectionHead
               eyebrow="About the club"
               title={<>A not-for-profit built to change Indian football</>}
               body={`${club.foundation} is a Section 8 not-for-profit founded by retired civil servants and their associates, focused solely on promoting football in Kerala and across India. MSRF owns and operates ${club.short}.`}
             />
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-3 md:mt-10">
               <ActionLink href="/about" variant="ghost">
                 Our story
               </ActionLink>
@@ -138,7 +140,7 @@ function Home() {
             align="center"
           />
         </Reveal>
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-4">
           {visionPillars.map((pillar, index) => (
             <Reveal key={pillar.title} delay={index * 90}>
               <article className="lift group h-full overflow-hidden rounded-3xl border border-border bg-card">
@@ -194,7 +196,7 @@ function Home() {
       </Section>
 
       {/* Technical Partner */}
-      <section className="relative px-6 py-24 md:px-10 bg-surface">
+      <section className="relative bg-surface px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto w-full max-w-[1240px]">
           <div className="group relative overflow-hidden rounded-[3rem] bg-card border border-border shadow-2xl">
             {/* Background Image with Overlay */}
@@ -206,7 +208,7 @@ function Home() {
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 to-black/20" />
 
-            <div className="relative grid items-center gap-12 p-12 md:p-20 lg:grid-cols-[1.5fr_1fr]">
+            <div className="relative grid items-center gap-8 p-8 md:gap-12 md:p-12 lg:grid-cols-[1.5fr_1fr] lg:p-20">
               {/* Text Content */}
               <Reveal>
                 <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-5 py-2.5 backdrop-blur-sm border border-white/10 mb-8">
@@ -216,7 +218,7 @@ function Home() {
                   </span>
                 </div>
                 
-                <h2 className="font-[family-name:var(--font-display)] text-5xl md:text-6xl font-black uppercase text-white tracking-tight">
+                <h2 className="font-[family-name:var(--font-display)] text-2xl font-black tracking-tight text-white uppercase sm:text-3xl md:text-5xl">
                   Technical Partner
                 </h2>
                 
@@ -224,7 +226,7 @@ function Home() {
                   {partnership.body}
                 </p>
                 
-                <div className="mt-12">
+                <div className="mt-8 md:mt-12">
                   <ActionLink href="/partner" variant="accent">
                     Inside the partnership
                   </ActionLink>
@@ -261,7 +263,7 @@ function Home() {
             align="center"
           />
         </Reveal>
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 md:mt-16 md:grid-cols-3">
           {journey.map((item, index) => (
             <Reveal key={item.step} delay={index * 120}>
               <article className="group text-center">
@@ -334,7 +336,8 @@ function Home() {
             </ActionLink>
           </Reveal>
         </div>
-        <div className="mt-14">
+        <Reveal delay={240}>
+          <div className="mt-14">
           <Swiper
             modules={[Autoplay]}
             spaceBetween={24}
@@ -362,7 +365,8 @@ function Home() {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
+          </div>
+        </Reveal>
       </Section>
 
       {/* Payment confirmation */}
@@ -371,7 +375,7 @@ function Home() {
       {/* CTA */}
       <Section>
         <Reveal>
-          <div className="glass relative overflow-hidden rounded-[2.5rem] px-8 py-20 text-center md:px-16">
+          <div className="glass relative overflow-hidden rounded-[2.5rem] px-8 py-12 text-center md:px-16 md:py-20">
             <div
               className="pointer-events-none absolute -top-1/2 left-1/2 h-[60vh] w-[60vw] -translate-x-1/2 animate-[sweep_12s_ease-in-out_infinite] opacity-30 blur-3xl"
               style={{ background: "radial-gradient(circle, var(--accent), transparent 65%)" }}
@@ -382,7 +386,7 @@ function Home() {
               <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
                 Speak to our academy team about age groups, batches and the professional pathway.
               </p>
-              <div className="mt-10 flex flex-wrap justify-center gap-3">
+              <div className="mt-8 flex flex-wrap justify-center gap-3 md:mt-10">
                 <ActionLink href="/contact">Book a trial</ActionLink>
                 <a
                   href={`tel:${club.phoneHref}`}

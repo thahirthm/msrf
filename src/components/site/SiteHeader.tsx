@@ -76,12 +76,7 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
-            <Link
-              href="/contact"
-              className="hidden rounded-full bg-accent px-5 py-2.5 text-[0.8rem] font-semibold text-accent-foreground transition-all duration-500 hover:brightness-110 md:inline-flex"
-            >
-              Join the academy
-            </Link>
+
             <button
               type="button"
               aria-label="Toggle menu"

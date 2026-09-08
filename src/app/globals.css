@@ -215,7 +215,7 @@
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.9;
-  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  font-size: clamp(2.25rem, 6.5vw, 6.5rem);
 }
 
 @utility display-lg {
@@ -223,7 +223,7 @@
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 0.94;
-  font-size: clamp(2rem, 4.6vw, 3.75rem);
+  font-size: clamp(1.75rem, 4.5vw, 3.75rem);
 }
 
 @utility pitch-grid {
