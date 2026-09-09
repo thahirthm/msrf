@@ -116,17 +116,20 @@ function Home() {
             </div>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2">
-            {missionPillars.map((pillar, index) => (
-              <Reveal key={pillar.title} delay={index * 90}>
-                <article className="glass lift h-full rounded-3xl p-7">
-                  <p className="font-[family-name:var(--font-display)] text-xs font-bold uppercase tracking-[0.2em] text-accent">
-                    0{index + 1}
-                  </p>
-                  <h3 className="mt-4 text-lg">{pillar.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pillar.body}</p>
-                </article>
-              </Reveal>
-            ))}
+            {missionPillars.map((pillar, index) => {
+              const presets: ("up" | "scale" | "left" | "blur")[] = ["up", "scale", "left", "blur"];
+              return (
+                <Reveal key={pillar.title} delay={index * 90} preset={presets[index % presets.length]}>
+                  <article className="glass lift h-full rounded-3xl p-7">
+                    <p className="font-[family-name:var(--font-display)] text-xs font-bold uppercase tracking-[0.2em] text-accent">
+                      0{index + 1}
+                    </p>
+                    <h3 className="mt-4 text-lg">{pillar.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{pillar.body}</p>
+                  </article>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </Section>
@@ -141,23 +144,26 @@ function Home() {
           />
         </Reveal>
         <div className="mt-10 grid gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-4">
-          {visionPillars.map((pillar, index) => (
-            <Reveal key={pillar.title} delay={index * 90}>
-              <article className="lift group h-full overflow-hidden rounded-3xl border border-border bg-card">
-                <div className="relative aspect-4/3 overflow-hidden">
-                  <img
-                    src={pillar.image}
-                    alt={pillar.title}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                  <h3 className="absolute bottom-4 left-5 text-xl uppercase text-on-dark">{pillar.title}</h3>
-                </div>
-                <p className="p-6 text-sm leading-relaxed text-muted-foreground">{pillar.body}</p>
-              </article>
-            </Reveal>
-          ))}
+          {visionPillars.map((pillar, index) => {
+            const presets: ("down" | "right" | "up" | "blur")[] = ["down", "right", "up", "blur"];
+            return (
+              <Reveal key={pillar.title} delay={index * 90} preset={presets[index % presets.length]}>
+                <article className="lift group h-full overflow-hidden rounded-3xl border border-border bg-card">
+                  <div className="relative aspect-4/3 overflow-hidden">
+                    <img
+                      src={pillar.image}
+                      alt={pillar.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <h3 className="absolute bottom-4 left-5 text-xl uppercase text-on-dark">{pillar.title}</h3>
+                  </div>
+                  <p className="p-6 text-sm leading-relaxed text-muted-foreground">{pillar.body}</p>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </Section>
 
