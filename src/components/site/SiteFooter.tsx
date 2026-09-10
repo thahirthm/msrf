@@ -4,6 +4,7 @@ import Link from "next/link";
 import { club, img } from "@/lib/site-data";
 import { BallIcon } from "./Primitives";
 import { Reveal } from "./Reveal";
+import { Instagram, Twitter, Facebook, Youtube } from "lucide-react";
 
 const columns = [
   {
@@ -51,9 +52,6 @@ export function SiteFooter() {
                   </p>
                 </div>
               </div>
-              <p className="text-white/60 text-sm leading-relaxed mb-8">
-                {club.foundation} is a Section 8 not-for-profit committed to building the future of Indian football, from the grassroots to the global stage. Every rupee raised goes back into coaching, facilities, and the children in our care.
-              </p>
               <div className="flex flex-col gap-3 text-sm font-medium text-white/60">
                 <div className="flex items-center gap-3 group">
                   <span className="text-accent font-black">T.</span>
@@ -67,6 +65,20 @@ export function SiteFooter() {
                     {club.email}
                   </a>
                 </div>
+              </div>
+              <div className="flex gap-4 mt-8">
+                <a href="#" aria-label="Instagram" className="text-white/40 hover:text-accent transition-colors">
+                  <Instagram size={20} />
+                </a>
+                <a href="#" aria-label="Twitter" className="text-white/40 hover:text-accent transition-colors">
+                  <Twitter size={20} />
+                </a>
+                <a href="#" aria-label="Facebook" className="text-white/40 hover:text-accent transition-colors">
+                  <Facebook size={20} />
+                </a>
+                <a href="#" aria-label="Youtube" className="text-white/40 hover:text-accent transition-colors">
+                  <Youtube size={20} />
+                </a>
               </div>
             </Reveal>
           </div>

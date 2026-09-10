@@ -19,7 +19,7 @@ function Programs() {
           </>
         }
         body="From a first controlled touch at six to a professional trial at eighteen — structured blocks, accredited coaches and measurable progress at every stage."
-        image={img.training[3]}
+        image="/programs_banner.png"
         alt="Academy training session in progress"
       />
 
