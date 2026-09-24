@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import { Reveal } from "@/components/site/Reveal";
+import type { RevealPreset } from "@/components/site/Reveal";
 import { PaymentSection } from "@/components/site/PaymentSection";
 import { ActionLink, Eyebrow, Section, SectionHead, StatBlock, BallIcon } from "@/components/site/Primitives";
 import {
@@ -119,7 +120,7 @@ function Home() {
             {missionPillars.map((pillar, index) => {
               const presets: ("up" | "scale" | "left" | "blur")[] = ["up", "scale", "left", "blur"];
               return (
-                <Reveal key={pillar.title} delay={index * 90} preset={presets[index % presets.length]}>
+                <Reveal key={pillar.title} delay={index * 90} preset={presets[index % presets.length] as RevealPreset}>
                   <article className="glass lift h-full rounded-3xl p-7">
                     <p className="font-[family-name:var(--font-display)] text-xs font-bold uppercase tracking-[0.2em] text-accent">
                       0{index + 1}
@@ -147,7 +148,7 @@ function Home() {
           {visionPillars.map((pillar, index) => {
             const presets: ("down" | "right" | "up" | "blur")[] = ["down", "right", "up", "blur"];
             return (
-              <Reveal key={pillar.title} delay={index * 90} preset={presets[index % presets.length]}>
+              <Reveal key={pillar.title} delay={index * 90} preset={presets[index % presets.length] as RevealPreset}>
                 <article className="lift group h-full overflow-hidden rounded-3xl border border-border bg-card">
                   <div className="relative aspect-4/3 overflow-hidden">
                     <img
