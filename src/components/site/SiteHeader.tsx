@@ -13,6 +13,7 @@ const nav = [
   { to: "/partner", label: "Technical Partner" },
   { to: "/gallery", label: "Gallery" },
   { to: "/career", label: "Career" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export function SiteHeader() {
@@ -76,6 +77,13 @@ export function SiteHeader() {
 
           <div className="flex items-center gap-2">
             <ThemeToggle />
+
+            <Link
+              href="/contact"
+              className="hidden lg:inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-[0.78rem] font-bold text-black transition-all hover:brightness-110"
+            >
+              Contact Us
+            </Link>
 
             <button
               type="button"

@@ -1,5 +1,5 @@
 import logo from "@/assets/logo.jpg.asset.json";
-import argentinosCrest from "@/assets/argentinos-crest.jpg.asset.json";
+import argentinosCrest from "@/assets/arg.png";
 import heroStadium from "@/assets/hero-stadium.jpg";
 import journey1 from "@/assets/journey-1.jpg.asset.json";
 import journey2 from "@/assets/journey-2.jpg.asset.json";
@@ -26,7 +26,7 @@ const url = (asset: unknown) => (asset as { url: string }).url;
 
 export const img = {
   logo: url(logo),
-  argentinosCrest: url(argentinosCrest),
+  argentinosCrest: argentinosCrest.src,
   hero: heroStadium.src,
   journey: [url(journey1), url(journey2), url(journey3)] as [string, string, string],
   training: [url(train1), url(train2), url(train3), url(train4)] as [string, string, string, string],
@@ -42,9 +42,9 @@ export const club = {
   tagline: "We create professional footballers",
   kicker: "We are different",
   malayalam: "നമ്മുടെ സ്വന്തം",
-  phone: "95 44 95 44 00",
-  phoneHref: "+919544954400",
-  email: "msrfclt@gmail.com",
+  phone: "77 36 32 91 11",
+  phoneHref: "+917736329111",
+  email: "coo@msrf.co.in",
   website: "www.malabarchallengersfc.com",
   base: "Kozhikode, Kerala, India",
   hours: "Monday – Saturday · 10:00 AM – 5:00 PM",
@@ -236,23 +236,11 @@ export const team = [
     image: "https://i.pravatar.cc/300?img=15",
   },
   {
-    name: "Padma Shri Bhramanand S. K. S.",
-    role: "Director",
-    detail: "Padma Shri & Arjuna awardee; former India football captain and goalkeeper",
-    image: url(team6),
-  },
-  {
     name: "Sajeev Babu Kurup",
     role: "Director",
     detail:
       "Former Indian Ambassador to Guatemala, El Salvador and Honduras; retired Joint Secretary, Ministry of External Affairs",
     image: url(team7),
-  },
-  {
-    name: "T. P. Imbichammad",
-    role: "Director",
-    detail: "Chairman Emeritus, Avalon Technologies, Chennai",
-    image: url(team8),
   },
   {
     name: "Dr. Manoj Kaloor",

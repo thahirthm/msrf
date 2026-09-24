@@ -49,8 +49,8 @@ export default function RootLayout({
               alternateName: "MCFC",
               sport: "Football",
               parentOrganization: { "@type": "Organization", name: "Malabar Sports & Recreation Foundation" },
-              telephone: "+91 95 44 95 44 00",
-              email: "msrfclt@gmail.com",
+              telephone: "+91 77 36 32 91 11",
+              email: "coo@msrf.co.in",
               address: { "@type": "PostalAddress", addressRegion: "Kerala", addressCountry: "IN" },
             }),
           }}

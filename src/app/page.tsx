@@ -83,7 +83,7 @@ function Home() {
         <div className="flex w-max animate-[marquee_34s_linear_infinite] gap-12 pr-12">
           {[0, 1].map((pass) => (
             <div key={pass} className="flex shrink-0 items-center gap-12">
-              {["Grassroots to professional", "Argentinos Juniors partner", "U-20 India", "Kerala's football revival", "Not-for-profit, always"].map(
+              {["Grassroots to professional", "Argentinos Juniors partner", "", "Kerala's football revival", "Not-for-profit, always"].map(
                 (word) => (
                   <span
                     key={word}
@@ -191,7 +191,7 @@ function Home() {
                 <p className="mt-4 text-sm text-muted-foreground">{program.description}</p>
                 <Link
                   href="/contact"
-                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-accent"
+                  className="mt-auto pt-8 inline-flex items-center gap-2 text-sm font-semibold text-accent"
                 >
                   Enquiry <span aria-hidden>→</span>
                 </Link>
@@ -242,12 +242,12 @@ function Home() {
               {/* Logo Area */}
               <Reveal delay={150}>
                 <div className="flex flex-col items-center lg:items-end justify-center">
-                  <div className="relative flex h-56 w-56 sm:h-72 sm:w-72 items-center justify-center rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-700 group-hover:bg-white/10">
+                  <div className="relative flex h-72 w-72 sm:h-80 sm:w-80 items-center justify-center rounded-full bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-700 group-hover:bg-white/10">
                     <img
                       src={img.argentinosCrest}
                       alt="Technical Partner crest"
                       loading="lazy"
-                      className="h-32 sm:h-44 w-auto object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110"
+                      className="h-48 sm:h-64 w-auto object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110"
                     />
                   </div>
                   <p className="mt-8 text-center lg:text-right text-xs font-bold uppercase tracking-[0.25em] text-accent">
