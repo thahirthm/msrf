@@ -4,7 +4,7 @@ import Link from "next/link";
 import { club, img } from "@/lib/site-data";
 import { BallIcon } from "./Primitives";
 import { Reveal } from "./Reveal";
-import { Instagram, Twitter, Facebook, Youtube } from "lucide-react";
+import { Instagram, Twitter, Facebook, Youtube, Phone, Mail } from "lucide-react";
 
 const columns = [
   {
@@ -54,13 +54,13 @@ export function SiteFooter() {
               </div>
               <div className="flex flex-col gap-3 text-sm font-medium text-white/60">
                 <div className="flex items-center gap-3 group">
-                  <span className="text-accent font-black">T.</span>
+                  <Phone size={14} className="text-accent shrink-0" />
                   <a href={`tel:${club.phoneHref}`} className="group-hover:text-white transition-colors">
                     {club.phone}
                   </a>
                 </div>
                 <div className="flex items-center gap-3 group">
-                  <span className="text-accent font-black">E.</span>
+                  <Mail size={14} className="text-accent shrink-0" />
                   <a href={`mailto:${club.email}`} className="group-hover:text-white transition-colors">
                     {club.email}
                   </a>
