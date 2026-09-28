@@ -117,7 +117,7 @@ function Home() {
             </div>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2">
-            {missionPillars.map((pillar, index) => {
+            {missionPillars.slice(0, 4).map((pillar, index) => {
               const presets: ("up" | "scale" | "left" | "blur")[] = ["up", "scale", "left", "blur"];
               return (
                 <Reveal key={pillar.title} delay={index * 90} preset={presets[index % presets.length] as RevealPreset}>
