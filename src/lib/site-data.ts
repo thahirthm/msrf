@@ -9,6 +9,7 @@ import train2 from "@/assets/train-2.jpg.asset.json";
 import train3 from "@/assets/train-3.jpg.asset.json";
 import train4 from "@/assets/train-4.jpg.asset.json";
 import ajVisit from "@/assets/aj-visit.jpg";
+import contactBanner from "@/assets/contact-banner.jpg";
 import squad1 from "@/assets/squad-1.jpg.asset.json";
 import squad2 from "@/assets/squad-2.jpg.asset.json";
 import squadWide from "@/assets/squad-wide.jpg.asset.json";
@@ -31,6 +32,7 @@ export const img = {
   journey: [url(journey1), url(journey2), url(journey3)] as [string, string, string],
   training: [url(train1), url(train2), url(train3), url(train4)] as [string, string, string, string],
   ajVisit: ajVisit.src,
+  contactBanner: contactBanner.src,
   squad: [url(squad1), url(squad2), url(squadWide)] as [string, string, string],
 };
 
@@ -46,7 +48,7 @@ export const club = {
   phoneHref: "+917736329111",
   email: "coo@msrf.co.in",
   website: "www.malabarchallengersfc.com",
-  base: "Kozhikode, Kerala, India",
+  base: "Kozhikode, Keralam, India",
   hours: "Monday – Saturday · 10:00 AM – 5:00 PM",
 };
 
@@ -59,7 +61,7 @@ export const heroStats = [
 export const visionPillars = [
   {
     title: "Restore",
-    body: "Restore Kerala's football prominence and elevate Indian football to international standards.",
+    body: "Restore Keralam's football prominence and elevate Indian football to international standards.",
     image: img.training[0],
   },
   {
@@ -73,8 +75,8 @@ export const visionPillars = [
     image: img.training[2],
   },
   {
-    title: "Enhance",
-    body: "Enhance the overall Indian football ecosystem with a focus on professionalism and excellence.",
+    title: "Enrich",
+    body: "Enrich the overall Indian football ecosystem with a focus on professionalism and excellence.",
     image: img.training[3],
   },
 ];
@@ -91,6 +93,10 @@ export const missionPillars = [
   {
     title: "Empowerment",
     body: "Give young boys and girls opportunities to lead productive lives by channelling their creative energy away from negative influences.",
+  },
+  {
+    title: "Football over addiction",
+    body: "Our mission is to inspire young minds to move away from destructive influences and towards a passion for football, discipline and a purposeful future.",
   },
   {
     title: "Comprehensive growth",
@@ -219,7 +225,7 @@ export const team = [
   {
     name: "Robert Johnson",
     role: "Director",
-    detail: "Former Chief Secretary to the Government of Kerala; currently Chairman, KSIDC",
+    detail: "Former Chief Secretary to the Government of Keralam; currently Chairman, KSIDC",
     image: "https://i.pravatar.cc/300?img=13",
   },
   {
@@ -276,7 +282,7 @@ export const events = [
     title: "Argentinos Juniors Coach Clinic",
     kind: "Workshop",
     date: "2026-10-05T16:00:00",
-    place: "MSRF Training Centre, Kerala",
+    place: "MSRF Training Centre, Keralam",
   },
   {
     title: "Challengers Youth Cup",

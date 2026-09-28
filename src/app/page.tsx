@@ -55,7 +55,7 @@ function Home() {
           </Reveal>
           <Reveal delay={220}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/70">
-              {club.malayalam} — a world-class grassroots academy in Kerala, built to place Indian players on the
+              {club.malayalam} — a world-class grassroots academy in Keralam, built to place Indian players on the
               global stage.
             </p>
           </Reveal>
@@ -84,7 +84,7 @@ function Home() {
         <div className="flex w-max animate-[marquee_34s_linear_infinite] gap-12 pr-12">
           {[0, 1].map((pass) => (
             <div key={pass} className="flex shrink-0 items-center gap-12">
-              {["Grassroots to professional", "Argentinos Juniors partner", "", "Kerala's football revival", "Not-for-profit, always"].map(
+              {["Grassroots to professional", "Argentinos Juniors partner", "", "Keralam's football revival", "Not-for-profit, always"].map(
                 (word) => (
                   <span
                     key={word}
@@ -108,7 +108,7 @@ function Home() {
             <SectionHead
               eyebrow="About the club"
               title={<>A not-for-profit built to change Indian football</>}
-              body={`${club.foundation} is a Section 8 not-for-profit founded by retired civil servants and their associates, focused solely on promoting football in Kerala and across India. MSRF owns and operates ${club.short}.`}
+              body={`${club.foundation} is a Section 8 not-for-profit founded by retired civil servants and their associates, focused solely on promoting football in Keralam and across India. MSRF owns and operates ${club.short}.`}
             />
             <div className="mt-8 flex flex-wrap gap-3 md:mt-10">
               <ActionLink href="/about" variant="ghost">

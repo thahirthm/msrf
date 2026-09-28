@@ -22,8 +22,8 @@ function Contact() {
           </>
         }
         body="Tell us about your child's age and experience, and our academy team will get back with the next available batch."
-        image={img.training[0]}
-        alt="Academy coach with young players"
+        image={img.contactBanner}
+        alt="Youth football academy training session at golden hour"
       />
 
       <Section>

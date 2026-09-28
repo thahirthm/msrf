@@ -211,7 +211,7 @@ export function JobApplicationDialog({ trigger, jobTitle }: { trigger: React.Rea
             <label htmlFor="location" className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
               Current Location / City*
             </label>
-            <input id="location" name="location" className={field} placeholder="e.g. Kozhikode, Kerala" />
+            <input id="location" name="location" className={field} placeholder="e.g. Kozhikode, Keralam" />
             {errors.location ? <p className="mt-2 text-xs text-destructive">{errors.location}</p> : null}
           </div>
 

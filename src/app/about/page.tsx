@@ -18,7 +18,7 @@ function About() {
             Football, run with the <span className="text-accent">discipline of public service</span>
           </>
         }
-        body={`${club.foundation} is a not-for-profit company registered under Section 8 of the Companies Act, founded by a group of retired civil servants and their associates with a single aim — promoting football in Kerala and India.`}
+        body={`${club.foundation} is a not-for-profit company registered under Section 8 of the Companies Act, founded by a group of retired civil servants and their associates with a single aim — promoting football in Keralam and India.`}
         image="/about_banner_bg.png"
         alt="Epic football stadium background"
       />
@@ -28,7 +28,7 @@ function About() {
           <Reveal>
             <SectionHead
               eyebrow="Who we are"
-              title="Owned by a foundation, not by shareholders"
+              title="Owned by a foundation, driven by shareholders"
               body="MSRF owns and operates Malabar Challengers Football Club. Because we are not-for-profit, every rupee raised returns to coaching, facilities, nutrition and welfare for the children in our care."
             />
             <ul className="mt-10 space-y-4">
@@ -132,7 +132,7 @@ function About() {
                 Governed by people who <span className="text-accent">built institutions</span>
               </>
             }
-            body="Malabar Sports & Recreation Foundation is directed by retired civil servants, a former ambassador, industry leaders and one of India's greatest goalkeepers."
+            body="Malabar Sports & Recreation Foundation is directed by retired civil servants, a former ambassador and industry leaders."
             align="center"
           />
         </Reveal>

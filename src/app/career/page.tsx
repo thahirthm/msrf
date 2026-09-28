@@ -10,7 +10,7 @@ const jobs = [
   {
     id: "1",
     title: "Academy Head Coach",
-    location: "Kozhikode, Kerala",
+    location: "Kozhikode, Keralam",
     description: "Lead the technical development of our youth teams, implement the Argentinos Juniors methodology, and mentor junior coaching staff.",
     status: "Open",
     postedOn: "2023-10-01",
@@ -18,7 +18,7 @@ const jobs = [
   {
     id: "2",
     title: "Sports Physiotherapist",
-    location: "Kozhikode, Kerala",
+    location: "Kozhikode, Keralam",
     description: "Manage player health, injury prevention protocols, and rehabilitation programs for the entire academy.",
     status: "Open",
     postedOn: "2023-10-15",
@@ -26,7 +26,7 @@ const jobs = [
   {
     id: "3",
     title: "Academy Manager",
-    location: "Kozhikode, Kerala",
+    location: "Kozhikode, Keralam",
     description: "Oversee daily operations, logistics, and parent communications for the academy.",
     status: "Closed",
     postedOn: "2023-08-20",
@@ -34,8 +34,8 @@ const jobs = [
   {
     id: "4",
     title: "Youth Scout",
-    location: "Kerala (Statewide)",
-    description: "Identify and recruit top emerging football talent across various districts in Kerala.",
+    location: "Keralam (Statewide)",
+    description: "Identify and recruit top emerging football talent across various districts in Keralam.",
     status: "Open",
     postedOn: "2023-10-25",
   }
